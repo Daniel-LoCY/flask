@@ -1,0 +1,32 @@
+[
+    {"id":1, "title":"這是標題", "content":"這是內容"}
+    ,{"id":2, "title":"論文", "content":"Adaptive Speech Synthesis and training using low-cost AI Computing"}
+    ,{"id":3, "title":"教學", "content":"https://ithelp.ithome.com.tw/articles/10191404"}
+    ,{"id":4, "title":"BOOK", "content":"網頁程式設計 ASP.NET MVC 5.x 範例完美演繹, 4/e (適用Visual C# 2022/2019)"}
+    ,{"id":5, "title":"opencv", "content":"https://www.youtube.com/watch?v=DZYeGMacsfI&t=72s"}
+    ,{"id":6, "title":"ROS教學", "content":"https://ithelp.ithome.com.tw/articles/10202378"}
+    ,{"id":7, "title":"video", "content":"https://gitlab.com/game48875/carline/-/blob/main/ConsoleApplication1/Resources/project_video.mp4"}
+    ,{"id":8, "title":"opencv", "content":"https://github.com/fanfuhan/learnOpencv.git"}
+    ,{"id":9, "title":"yolo教學", "content":"https://hackmd.io/@Titi/Sy9nQAauI#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7"}
+    ,{"id":10, "title":"tensorflow", "content":"https://github.com/tensorflow/tensorflow/tree/master/tensorflow<br/>"}
+    ,{"id":11, "title":"yolo", "content":"https://tw.leaderg.com/article/index?sn=11159"}
+    ,{"id":12, "title":"yolo", "content":"https://zhuanlan.zhihu.com/p/45852709"}
+    ,{"id":13, "title":"yolo", "content":"https://ithelp.ithome.com.tw/articles/10282549"}
+    ,{"id":14, "title":"weights", "content":"https://drive.google.com/file/d/1CfsvTcrKtL7m5FJP9zwIJkIr5LDHD8-J/view?usp=sharing"}
+    ,{"id":15, "title":"darknet_gpu git", "content":"https://github.com/AlexeyAB/darknet"}
+    ,{"id":16, "title":"yolo", "content":"https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights"}
+    ,{"id":17, "title":"手寫辨識", "content":"https://aifreeblog.herokuapp.com/posts/68/Handwriting_Chinese_Characters_Recognition/"}
+    ,{"id":18, "title":"youtube", "content":"https://www.youtube.com/watch?v=PCZGFJgdpWQ&list=RDMMPCZGFJgdpWQ"}
+    ,{"id":20, "title":"Wide & Deep Learning for Recommender Systems", "content":"https://arxiv.org/abs/1606.07792"}
+    ,{"id":21, "title":"wide deep", "content":"https://medium.com/data-scientists-playground/wide-deep%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E8%96%A6%E7%B3%BB%E7%B5%B1-%E5%8E%9F%E7%90%86-8badacf777f3"}
+    ,{"id":22, "title":"ML", "content":"https://github.com/andy6804tw/2021-13th-ironman"}
+    ,{"id":23, "title":"opendata", "content":"https://docs.microsoft.com/zh-tw/azure/open-datasets/dataset-microsoft-news?tabs=azureml-opendatasets"}
+    ,{"id":24, "title":"pytorch-widedeep", "content":"https://github.com/jrzaurin/pytorch-widedeep"}
+    ,{"id":25, "title":"Wide-and-Deep-PyTorch", "content":"https://github.com/zenwan/Wide-and-Deep-PyTorch"}
+    ,{"id":26, "title":"chrome extensions", "content":"https://github.com/GoogleChrome/chrome-extensions-samples"}
+    ,{"id":27, "title":"STEAM 教育學習網", "content":"https://steam.oxxostudio.tw/"}
+    ,{"id":29, "title":"pytorch教學", "content":"https://tree.rocks/deep-learning-from-scratch-pytorch-with-regression-5a12546299ea"}
+    ,{"id":30, "title":"AI無法一步登天，讓我們先從專有名詞定義開始", "content":"https://ithelp.ithome.com.tw/users/20111566/ironman/1626"}
+    ,{"id":31, "title":"pytorch教學", "content":"https://seachaos.com/"}
+    ,{"id":32, "title":"pytorch", "content":"https://courses.cs.washington.edu/courses/cse446/19au/section9.html"}
+]
