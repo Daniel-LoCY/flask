@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+lost+found/
+
+nohup.out
+
+jupyter-notebook-dir/*
