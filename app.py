@@ -13,24 +13,11 @@ cors = CORS(app, resources = { r'*' : { 'origins' : '*' } })
 def ts():
     try:
         arg = request.args['v']
-        com = 'pytube https://www.youtube.com/watch?v=' + arg
-        os.system(com)
         url = 'https://www.youtube.com/watch?v=' + arg
         video = YouTube(url)
-    # * ? > < ; & ! [ ] | \ ' " ` ( ) { }
-    #s = ['*', '?', '>', '<', ';', '&', '!', '[', ']', '|', "'", ]
-        title = video.title.replace("'", "")
-        title = title.replace('.', '')
-        title = title.replace('/', '')
-        title = title.replace('\\', '')
-        title = title.replace('#', '')
-        title = title.replace(':', '')
-        result = title + '.mp4'
-        dst = 'download/' + result
-        os.rename(result, dst)
-        if os.path.exists(result):
-            os.remove(result)
-        return send_from_directory('download', result, as_attachment=True)
+        file_path = video.streams.get_highest_resolution().download('download')
+        file_name = file_path.split('/')[-1]
+        return send_from_directory('download', file_name, as_attachment=True)
     except: 
         return "<h1>下載失敗 很抱歉</h1"
     
@@ -40,17 +27,18 @@ def playList():
         arg = request.args['list']
         url = 'https://www.youtube.com/playlist?list=' + arg
         list = Playlist(url)
-        os.system('rm -rf video.zip')
-        if os.path.exists(list.title):
-            os.system('rm -rf ' + list.title)
-        os.system('pytube ' + url)
-        with zipfile.ZipFile(f'video.zip', 'w') as zf:
-            for root, dirs, files in os.walk(list.title):
+        title = list.title
+        des = 'download/'+title
+        for i in list.videos:
+            i.streams.get_highest_resolution().download(des)
+        directory = ''
+        with zipfile.ZipFile(f'{des}.zip', 'w') as zf:
+            for root, dirs, files in os.walk(des):
+                directory = root
                 for file_name in files:
-                    zf.write(f'{root}/{file_name}')
-        os.system('mv ' + list.title + '/* download/')
-        os.system('rm -rf ' + list.title)
-        return send_from_directory('./', 'video.zip', as_attachment = True)
+                    path = f'{root}/{file_name}'
+                    zf.write(path)
+        return send_from_directory('download', f'{title}.zip', as_attachment = True)
     except:
         return "<h1>下載失敗 很抱歉</h1"
     
@@ -134,4 +122,4 @@ def download_file():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, ssl_context='adhoc')
+    app.run(host='0.0.0.0', port=5000)
