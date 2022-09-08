@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html" charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="https://static.runoob.com/assets/jquery/jquery.growl/javascripts/jquery.growl.js" type="text/javascript"></script>
+<link href="https://static.runoob.com/assets/jquery/jquery.growl/stylesheets/jquery.growl.css" rel="stylesheet" type="text/css" />
+		</meta>
+		<title>留言板</title>
+		<style type="text/css">
+			.head{
+				background-color:#003344;color:white;font-weight:bold;font-size:30px;
+				text-align:center;padding:10px;
+			}
+			.input{
+				text-align:center;margin-left: auto;margin-right: auto;
+			}
+			.chat_title{
+				text-align:center;background-color: aqua;
+				font-size:30px;margin: 0;
+			}
+			.chat_content{
+				text-align:center;
+			}
+			.block{
+				border-style: double;
+			}
+		</style>
+	</head>
+<body style="margin:0px;">
+	<div class="head">Daniel's Message Board</div>
+	<p class="head">標題</p>
+	<div class="input">
+			<input size="50" type="text" id="title" placeholder="請輸入標題"/>
+	</div>
+	<p class="head">內容</p>
+	<div class="input">
+			<textarea placeholder="請輸入內容" maxlength="200" cols="50" id="content" rows="4"></textarea><br>
+	<button id="btn" type="button" onclick="submit()">送出</button>
+	</div>
+	<div id="list"></div>
+	<script src="../static/t.js"></script>
+</body>
+</html>
