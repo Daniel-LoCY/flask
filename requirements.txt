@@ -2,3 +2,4 @@ Flask
 Flask-Cors
 moviepy
 pytube
+gunicorn
