@@ -12,10 +12,6 @@ cors = CORS(app, resources = { r'*' : { 'origins' : '*' } })
 
 @app.route('/watch', methods=['GET'])
 def watch():
-    # try:
-    #     rmdir('download')
-    # except:
-    #     pass
     try:
         arg = request.args['v']
         res = ''
@@ -31,11 +27,6 @@ def watch():
     
 @app.route('/playlist', methods = ['GET'])
 def playList():
-    global delta
-    # try:
-    #     rmdir('download')
-    # except:
-    #     pass
     try:
         arg = request.args['list']
         url = 'https://www.youtube.com/playlist?list=' + arg
@@ -138,5 +129,9 @@ def webhook():
     repos = request.form.get('repository')
     return str(repos)
 
+@app.route('/test')
+def test():
+    return 'test OK'
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
