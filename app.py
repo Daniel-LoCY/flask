@@ -5,7 +5,7 @@ from flask_cors import CORS
 import zipfile
 from remove import rmdir
 from download_video import download_playlist, download_one, size, download_from_email
-from line_notify import sent
+from ticket_order.line_notify import sent
 
 app = Flask(__name__)
 cors = CORS(app, resources = { r'*' : { 'origins' : '*' } })
