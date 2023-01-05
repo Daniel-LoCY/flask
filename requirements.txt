@@ -3,3 +3,6 @@ Flask-Cors
 moviepy
 pytube
 gunicorn
+mysql-connector-python
+beautifulsoup4
+requests
