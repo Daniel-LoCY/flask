@@ -2,7 +2,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from azure_database_exec import exec_database
-from ..line_notify import sent
+from line_notify import sent
 
 a = requests.post('https://www.ebus.com.tw/NetOrderURL/payOrder/selectOrder.aspx', data={
     'txtCId':'S125357579',
