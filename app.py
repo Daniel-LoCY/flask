@@ -6,6 +6,8 @@ import zipfile
 from remove import rmdir
 from download_video import download_playlist, download_one, size, download_from_email
 from ticket_order.line_notify import sent
+from scripts.linebot_reply import reply
+from scripts.translate import en_to_ch
 
 app = Flask(__name__)
 cors = CORS(app, resources = { r'*' : { 'origins' : '*' } })
@@ -126,8 +128,20 @@ def download_file():
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    repos = request.form.get('repository')
-    return str(repos)
+    data = request.get_json()
+    # sent(json.dumps(data, ensure_ascii=False)) # 測試用
+    events = data['events'][0]
+    token = events['replyToken']
+    message = events['message']['text']
+    if message != None and 'tl: ' not in message:
+        response = reply(token, message)
+        # ch_text = message
+    else:
+        ch_text = en_to_ch(message)
+        response = reply(token, ch_text)
+    if response.status_code != 200:
+        sent(str(response.text))
+    return str(response.status_code)
 
 @app.route('/test')
 def test():
