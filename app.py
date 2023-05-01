@@ -8,6 +8,7 @@ from download_video import download_playlist, download_one, size, download_from_
 from ticket_order.line_notify import sent
 from scripts.linebot_reply import reply
 from scripts.translate import en_to_ch
+from find_res import get_res
 
 app = Flask(__name__)
 cors = CORS(app, resources = { r'*' : { 'origins' : '*' } })
@@ -39,7 +40,6 @@ def playList():
 
 @app.route('/res')
 def get():
-    from find_res import get_res
     url = request.args['url']
     return get_res(url)
 

@@ -7,19 +7,23 @@ def get_res(url):
 
     res_list = []
 
-    for i in video.streams.filter(type='video', progressive=True):
-        try:
-            result = regex.findall(str(i))
-            if len(result) != 0: 
-                res_list.append(int(result[0]))
-        except:
-            continue
-    
-    res_list = sorted(list(set(res_list)))
-    for index, i in enumerate(res_list):
-        res_list[index] = str(i) + 'p'
+    try:
 
-    return { 'res' : res_list }
+        for i in video.streams.filter(type='video', progressive=True):
+            try:
+                result = regex.findall(str(i))
+                if len(result) != 0: 
+                    res_list.append(int(result[0]))
+            except:
+                continue
+        
+        res_list = sorted(list(set(res_list)))
+        for index, i in enumerate(res_list):
+            res_list[index] = str(i) + 'p'
+
+        return { 'res' : res_list }
+    except:
+        return { 'res' : 'error' }
 
     # ok = []
     # res = []
